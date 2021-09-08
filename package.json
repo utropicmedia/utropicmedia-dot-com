@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "concurrently \"next --port 3000\" \"cd studio && sanity start\"",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "lerna bootstrap"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -14,7 +15,11 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@types/react": "^17.0.20",
+    "concurrently": "^6.2.1",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "lerna": "^4.0.0",
+    "typescript": "^4.4.2"
   }
 }
