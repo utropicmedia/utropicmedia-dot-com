@@ -7,19 +7,31 @@
     "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap",
+    "prettier": "prettier **/*.{ts,tsx,json} --ignore-path .gitignore --check",
+    "format": "prettier **/*.{ts,tsx,json} --ignore-path .gitignore --write"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "autoprefixer": "^10.3.4",
     "concurrently": "^6.2.1",
-    "eslint": "7.32.0",
+    "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "lerna": "^4.0.0",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "tailwindcss": "^2.2.14",
     "typescript": "^4.4.2"
   }
 }
